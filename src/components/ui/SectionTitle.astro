@@ -1,0 +1,7 @@
+---
+const { title, subtitle } = Astro.props;
+---
+<div style="display:flex; flex-direction:column; gap:6px; margin-bottom: 12px;">
+  <h2 class="h2">{title}</h2>
+  {subtitle ? <p class="kicker">{subtitle}</p> : null}
+</div>

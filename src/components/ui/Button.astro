@@ -1,0 +1,7 @@
+---
+const { href, variant = "default", label, target } = Astro.props;
+const cls = variant === "primary" ? "btn primary" : "btn";
+---
+<a class={cls} href={href} target={target}>
+  {label}
+</a>

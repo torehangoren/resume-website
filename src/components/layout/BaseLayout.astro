@@ -1,0 +1,28 @@
+---
+import "../../styles/global.css";
+
+const {
+  title = "Resume",
+  description = "Personal resume website",
+} = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="container">
+      <slot />
+      <footer style="margin:28px 0 10px; color: var(--muted); font-size: 0.9rem;">
+        <div class="hr"></div>
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <span>© {new Date().getFullYear()} Törehan Gören</span>
+          <span>Built with Astro</span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

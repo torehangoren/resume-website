@@ -1,0 +1,16 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Button from "../ui/Button.astro";
+
+const email = "mailto:torehangoren@gmail.com";
+const github = "https://github.com/torehangoren";
+const linkedin = "https://www.linkedin.com/in/toerehan-goeren/";
+---
+<section class="card section">
+  <SectionTitle title="Contact" subtitle="Let's connect" />
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <Button href={email} variant="primary" label="Email" />
+    <Button href={linkedin} target="_blank" label="LinkedIn" />
+    <Button href={github} target="_blank" label="GitHub" />
+  </div>
+</section>

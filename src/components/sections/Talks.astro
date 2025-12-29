@@ -1,0 +1,28 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import { getCollection } from "astro:content";
+
+const items = await getCollection("talks");
+const sorted = items.slice().sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+---
+<section class="card section">
+  <SectionTitle title="Talks" subtitle="Conferences and presentations" />
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    {sorted.map((t) => (
+      <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:700;">{t.data.title}</div>
+            <div class="kicker">{t.data.event}</div>
+          </div>
+          <div class="kicker">{t.data.date}</div>
+        </div>
+        {t.data.link ? (
+          <div style="margin-top:10px;">
+            <a class="btn" href={t.data.link} target="_blank">Link</a>
+          </div>
+        ) : null}
+      </div>
+    ))}
+  </div>
+</section>

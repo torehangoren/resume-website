@@ -1,0 +1,36 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Tag from "../ui/Tag.astro";
+import { getCollection } from "astro:content";
+
+const items = await getCollection("experience");
+const sorted = items
+  .slice()
+  .sort((a, b) => (a.data.start < b.data.start ? 1 : -1));
+---
+<section class="card section">
+  <SectionTitle title="Experience" subtitle="Recent roles and responsibilities" />
+  <div style="display:flex; flex-direction:column; gap:14px;">
+    {sorted.map((it) => (
+      <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:700;">{it.data.role}</div>
+            <div class="kicker">{it.data.company}{it.data.location ? ` • ${it.data.location}` : ""}</div>
+          </div>
+          <div class="kicker">
+            {it.data.start} — {it.data.end ?? "present"}
+          </div>
+        </div>
+
+        <ul style="margin:10px 0 0 18px; color: var(--muted);">
+          {it.data.highlights.map((h) => <li>{h}</li>)}
+        </ul>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+          {it.data.tags.map((t) => <Tag label={t} />)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
