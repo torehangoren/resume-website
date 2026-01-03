@@ -1,5 +1,23 @@
 import { defineCollection, z } from "astro:content";
 
+const profile = defineCollection({
+  schema: z.object({
+    fullName: z.string(),
+    headline: z.string(),
+    location: z.string(),
+    summary: z.array(z.string()),
+    languages: z.array(
+      z.object({
+        name: z.string(),
+        level: z.string(),
+      })
+    ),
+    industries: z.array(z.string()),
+    sapTraining: z.array(z.string()),
+    tech: z.array(z.string()),
+  }),
+});
+
 const experience = defineCollection({
   schema: z.object({
     company: z.string(),
@@ -26,9 +44,9 @@ const talks = defineCollection({
   schema: z.object({
     title: z.string(),
     event: z.string(),
-    date: z.string(), // YYYY-MM-DD
+    date: z.string(), // allow "2024" or "YYYY-MM-DD"
     link: z.string().url().optional(),
   }),
 });
 
-export const collections = { experience, projects, talks };
+export const collections = { profile, experience, projects, talks };

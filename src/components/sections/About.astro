@@ -1,0 +1,58 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Tag from "../ui/Tag.astro";
+import { getCollection } from "astro:content";
+
+const profileItems = await getCollection("profile");
+const p = profileItems[0]?.data;
+
+if (!p) {
+  throw new Error("Profile content not found. Ensure src/content/profile/main.md exists.");
+}
+---
+<section class="card section">
+  <SectionTitle title="About" subtitle="Profile, languages, industries, and training" />
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    {p.summary.map((line) => <p>{line}</p>)}
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="grid grid-3">
+    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+      <div style="font-weight:700; margin-bottom:8px;">Languages</div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        {p.languages.map((l) => (
+          <div class="badge" style="justify-content:space-between;">
+            <span>{l.name}</span>
+            <span>{l.level}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+      <div style="font-weight:700; margin-bottom:8px;">Industries</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        {p.industries.map((i) => <Tag label={i} />)}
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+      <div style="font-weight:700; margin-bottom:8px;">Core Tech</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        {p.tech.map((t) => <Tag label={t} />)}
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div>
+    <div style="font-weight:700; margin-bottom:8px;">SAP Training & Focus</div>
+    <ul style="margin:10px 0 0 18px; color: var(--muted);">
+      {p.sapTraining.map((s) => <li>{s}</li>)}
+    </ul>
+  </div>
+</section>

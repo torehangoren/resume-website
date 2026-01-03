@@ -3,6 +3,9 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import Button from "../ui/Button.astro";
 
 const email = "mailto:torehangoren@gmail.com";
+const businessEmail = "mailto:Toerehan.goeren@it-culture.net";
+const phone = "tel:+496643459027";
+const website = "https://www.it-culture.net";
 const github = "https://github.com/torehangoren";
 const linkedin = "https://www.linkedin.com/in/toerehan-goeren/";
 ---
@@ -10,6 +13,9 @@ const linkedin = "https://www.linkedin.com/in/toerehan-goeren/";
   <SectionTitle title="Contact" subtitle="Let's connect" />
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
     <Button href={email} variant="primary" label="Email" />
+    <Button href={businessEmail} label="Business Email" />
+    <Button href={phone} label="Phone" />
+    <Button href={website} target="_blank" label="Website" />
     <Button href={linkedin} target="_blank" label="LinkedIn" />
     <Button href={github} target="_blank" label="GitHub" />
   </div>
