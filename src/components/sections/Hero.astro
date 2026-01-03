@@ -1,5 +1,6 @@
 ---
 import Button from "../ui/Button.astro";
+import Avatar from "../ui/Avatar.astro";
 
 const name = "Törehan Gören";
 const title = "SAP Developer (UI5) • UI5 Department Lead";
@@ -12,6 +13,8 @@ const links = {
   github: "https://github.com/torehangoren",
   email: "mailto:torehangoren@gmail.com",
 };
+
+const avatarSrc = `${import.meta.env.BASE_URL}/assets/avatar.jpg`;
 ---
 <section class="card section">
   <div class="grid grid-2">
@@ -28,11 +31,15 @@ const links = {
       </div>
     </div>
 
-    <div class="card" style="padding:16px; border-radius: var(--radius);">
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div class="badge">Focus: SAP UI5 • TypeScript • SAP EWM</div>
-        <div class="badge">Strengths: Ownership • Quality • Coordination</div>
-        <div class="badge">Services: UI5 Apps • Libraries • E2E Testing</div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <Avatar src={avatarSrc} alt={`${name} profile photo`} size={104} />
+      <div class="card" style="padding:16px; border-radius: var(--radius); width:100%;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="badge">Expertise: SAPUI5/Fiori • TypeScript • SAP EWM • End-to-End</div>
+          <div class="badge">Leadership: Ownership • Tech Lead • Process Thinking • Quality</div>
+          <div class="badge">Delivery: Custom UI5 Apps • Shared Libraries • RAP/OData • E2E Testing</div>
+          <div class="badge">Domain: Warehouse Automation • Device Integration • Logistics • Operations</div>
+        </div>
       </div>
     </div>
   </div>
