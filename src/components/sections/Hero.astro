@@ -3,7 +3,7 @@ import Button from "../ui/Button.astro";
 import Avatar from "../ui/Avatar.astro";
 
 const name = "Törehan Gören";
-const title = "SAP Developer (UI5) • UI5 Department Lead";
+const title = "Independent SAP Developer";
 const location = "Austria";
 const pitch =
   "SAP EWM and SAPUI5/Fiori developer delivering end-to-end solutions from UI to OData/RAP backends, including device integration and warehouse process automation.";
@@ -15,32 +15,121 @@ const links = {
 };
 
 const avatarSrc = `${import.meta.env.BASE_URL}/assets/avatar.jpg`;
+const cvHref = `${import.meta.env.BASE_URL}/assets/torehan-goeren-cv.pdf`;
 ---
-<section class="card section">
-  <div class="grid grid-2">
-    <div>
-      <p class="kicker">{location}</p>
-      <h1 class="h1">{name}</h1>
-      <p style="margin-top:10px; color: var(--text); font-weight: 600;">{title}</p>
-      <p style="margin-top:10px;">{pitch}</p>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-        <Button href={links.linkedin} target="_blank" variant="primary" label="LinkedIn" />
-        <Button href={links.github} target="_blank" label="GitHub" />
-        <Button href={links.email} label="Email" />
+<section class="section hero card">
+  <div class="hero-brand">
+    <div class="hero-logo" aria-hidden="true">TG</div>
+    <div class="hero-brand-name">Törehan Gören</div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div data-avatar>
+        <Avatar src={avatarSrc} alt={`${name} profile photo`} size={300} ring={12} />
       </div>
-    </div>
+      <div class="hero-copy">
+        <p class="kicker">{location}</p>
+        <h1 class="h1">{name}</h1>
+        <p class="hero-title">{title}</p>
+        <p class="hero-pitch">{pitch}</p>
 
-    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
-      <Avatar src={avatarSrc} alt={`${name} profile photo`} size={104} />
-      <div class="card" style="padding:16px; border-radius: var(--radius); width:100%;">
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div class="badge">Expertise: SAPUI5/Fiori • TypeScript • SAP EWM • End-to-End</div>
-          <div class="badge">Leadership: Ownership • Tech Lead • Process Thinking • Quality</div>
-          <div class="badge">Delivery: Custom UI5 Apps • Shared Libraries • RAP/OData • E2E Testing</div>
-          <div class="badge">Domain: Warehouse Automation • Device Integration • Logistics • Operations</div>
+        <div class="hero-actions">
+          <Button href={cvHref} variant="primary" label="Download CV (PDF)" />
+          <Button href={links.linkedin} target="_blank" label="LinkedIn" />
+          <Button href={links.github} target="_blank" label="GitHub" />
+          <Button href={links.email} label="Email" />
         </div>
       </div>
     </div>
+
   </div>
 </section>
+
+<style>
+  .hero {
+    color: var(--text-primary);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 28px;
+    align-items: center;
+    padding-left: 36px;
+  }
+
+  .hero-left {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--accent-blue);
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-blue);
+  }
+
+  .hero-brand-name {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+  }
+
+  .hero-title {
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  .hero-pitch {
+    margin-top: 10px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .hero [data-avatar] {
+    --avatar-ring: var(--bg-elevated);
+    --avatar-shadow: var(--shadow-soft);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+    }
+
+    .hero-left {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero [data-avatar] {
+      transform: scale(0.78);
+    }
+  }
+</style>

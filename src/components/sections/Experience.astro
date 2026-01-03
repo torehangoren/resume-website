@@ -12,7 +12,7 @@ const sorted = items
   <SectionTitle title="Experience" subtitle="Recent roles and responsibilities" />
   <div style="display:flex; flex-direction:column; gap:14px;">
     {sorted.map((it) => (
-      <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+      <div class="card" style="padding:14px; background: var(--bg-elevated);">
         <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
           <div>
             <div style="font-weight:700;">{it.data.role}</div>

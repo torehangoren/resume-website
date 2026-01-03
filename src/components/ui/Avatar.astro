@@ -1,15 +1,16 @@
 ---
-const { src, alt, size = 104 } = Astro.props;
+const { src, alt, size = 280, ring = 10 } = Astro.props;
+const innerSize = Math.max(size - ring * 2, 0);
 ---
 <div
-  style={`width:${size}px; height:${size}px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); box-shadow:0 10px 24px rgba(0,0,0,0.35), 0 0 12px rgba(255,255,255,0.08); overflow:hidden;`}
+  style={`width:${size}px; height:${size}px; padding:${ring}px; border-radius:50%; background: linear-gradient(140deg, var(--avatar-ring, #151c28), rgba(47, 109, 246, 0.35)); box-shadow: var(--avatar-shadow, 0 24px 60px rgba(0,0,0,0.55)); display:flex; align-items:center; justify-content:center;`}
 >
   <img
     src={src}
     alt={alt}
-    width={size}
-    height={size}
+    width={innerSize}
+    height={innerSize}
     loading="lazy"
-    style="width:100%; height:100%; object-fit:cover; display:block;"
+    style="width:100%; height:100%; object-fit:cover; display:block; border-radius:50%; border:1px solid rgba(255,255,255,0.08);"
   />
 </div>

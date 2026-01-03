@@ -13,14 +13,24 @@ if (!p) {
 <section class="card section">
   <SectionTitle title="About" subtitle="Profile, languages, industries, and training" />
 
-  <div style="display:flex; flex-direction:column; gap:10px;">
-    {p.summary.map((line) => <p>{line}</p>)}
+  <div class="about-intro">
+    <div class="about-summary">
+      {p.summary.map((line) => <p>{line}</p>)}
+    </div>
+    <div class="card about-badges">
+      <div class="hero-badges">
+        <div class="badge">Expertise: SAPUI5/Fiori • TypeScript • SAP EWM • End-to-End</div>
+        <div class="badge">Leadership: Ownership • Tech Lead • Process Thinking • Quality</div>
+        <div class="badge">Delivery: Custom UI5 Apps • Shared Libraries • RAP/OData • E2E Testing</div>
+        <div class="badge">Domain: Warehouse Automation • Device Integration • Logistics • Operations</div>
+      </div>
+    </div>
   </div>
 
   <div class="hr"></div>
 
   <div class="grid grid-3">
-    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+    <div class="card" style="padding:14px; background: var(--bg-elevated);">
       <div style="font-weight:700; margin-bottom:8px;">Languages</div>
       <div style="display:flex; flex-direction:column; gap:6px;">
         {p.languages.map((l) => (
@@ -32,14 +42,14 @@ if (!p) {
       </div>
     </div>
 
-    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+    <div class="card" style="padding:14px; background: var(--bg-elevated);">
       <div style="font-weight:700; margin-bottom:8px;">Industries</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         {p.industries.map((i) => <Tag label={i} />)}
       </div>
     </div>
 
-    <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+    <div class="card" style="padding:14px; background: var(--bg-elevated);">
       <div style="font-weight:700; margin-bottom:8px;">Core Tech</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         {p.tech.map((t) => <Tag label={t} />)}
@@ -56,3 +66,35 @@ if (!p) {
     </ul>
   </div>
 </section>
+
+<style>
+  .about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .about-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-badges {
+    padding: 18px;
+    background: var(--bg-elevated);
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .about-intro {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

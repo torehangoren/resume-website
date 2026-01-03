@@ -10,5 +10,5 @@ highlights:
   - "Performance analysis and optimization and stabilization of productive processes."
   - "Quality assurance via E2E tests, reviews, release management, and targeted defect analysis."
   - "Coordination with SAP EWM backend and connected systems (e.g., Cognex scanners, scales)."
-tags: ["SAP UI5", "SAP EWM", "OData", "ABAP", "RAP", "Device Integration"]
+tags: ["SAP UI5", "SAP EWM", "CAP", "RAP", "OData", "CDS", "E2E Testing", "Device Integration"]
 ---

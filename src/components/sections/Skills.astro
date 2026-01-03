@@ -11,7 +11,7 @@ const groups = [
   <SectionTitle title="Skills" subtitle="Core competencies" />
   <div class="grid grid-3">
     {groups.map((g) => (
-      <div class="card" style="padding:14px; background: rgba(255,255,255,0.02);">
+      <div class="card" style="padding:14px; background: var(--bg-elevated);">
         <div style="font-weight:700; margin-bottom:8px;">{g.title}</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           {g.items.map((i) => <span class="badge">{i}</span>)}

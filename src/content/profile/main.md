@@ -34,6 +34,7 @@ tech:
   - "SAPUI5 / Fiori"
   - "OData"
   - "RAP"
+  - "SAP BTP"
   - "JavaScript"
   - "TypeScript"
   - "SAP CAP"
