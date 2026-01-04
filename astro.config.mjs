@@ -3,6 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://torehangoren.github.io",
-  base: "/resume-website",
+  site: "https://torehangoren.net",
 });
