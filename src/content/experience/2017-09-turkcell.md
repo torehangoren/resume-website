@@ -1,5 +1,5 @@
 ---
-company: "Turkcell Communication Services"
+company: "Telecom Operator (NDA)"
 role: "ABAP Developer (S/4HANA RE/FX & IFRS 16)"
 location: "Turkey"
 start: "2017-09"

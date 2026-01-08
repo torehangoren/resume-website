@@ -1,5 +1,5 @@
 ---
-company: "Bell Slicer Schweiz AG"
+company: "Leading Swiss Food Manufacturer (NDA)"
 role: "UI5 Lead Developer (SAP EWM)"
 location: "Switzerland"
 start: "2024-12"
@@ -9,6 +9,8 @@ highlights:
   - "Delivered end-to-end solutions from UI (SAPUI5) to backend services (OData, ABAP/RAP)."
   - "Performance analysis and optimization (e.g., OData latency, network/proxy topics) and stabilization of productive processes."
   - "Quality assurance via E2E tests, reviews, release management, and focused root-cause analysis."
+  - "Structured working style (strukturierte Arbeitsweise) with code reviews, clean code standards, and reliable delivery."
+  - "Backlog refinement and delivery tracking with Jira and Azure DevOps Boards aligned to sprint goals."
   - "Close alignment with business stakeholders."
 tags: ["SAP UI5", "TypeScript", "SAP EWM", "OData", "RAP", "E2E Testing"]
 ---

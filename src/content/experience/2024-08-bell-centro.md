@@ -1,5 +1,5 @@
 ---
-company: "Bell Centro Schweiz AG"
+company: "Leading Swiss Food Manufacturer (NDA)"
 role: "UI5 Lead Developer (SAP EWM)"
 location: "Switzerland"
 start: "2024-08"
@@ -9,6 +9,8 @@ highlights:
   - "Delivered end-to-end solutions from UI (SAPUI5) to backend services (OData, ABAP/RAP)."
   - "Performance analysis and optimization and stabilization of productive processes."
   - "Quality assurance via E2E tests, reviews, release management, and targeted defect analysis."
+  - "Agile delivery in Scrum/Kanban with refinement, sprint planning, reviews, and retrospectives."
+  - "Authored technical documentation, ADRs, and runbooks in Confluence for shared UI5 patterns."
   - "Coordination with SAP EWM backend and connected systems (e.g., Cognex scanners, scales)."
 tags: ["SAP UI5", "SAP EWM", "CAP", "RAP", "OData", "CDS", "E2E Testing", "Device Integration"]
 ---

@@ -1,5 +1,5 @@
 ---
-company: "Multinet Up (Meal voucher service)"
+company: "Meal Voucher Service Provider (NDA)"
 role: "ABAP Developer (S/4HANA FI/CO/MT940)"
 location: "Turkey"
 start: "2017-04"

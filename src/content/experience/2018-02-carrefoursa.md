@@ -1,5 +1,5 @@
 ---
-company: "CarrefourSA"
+company: "Major Grocery Retailer (NDA)"
 role: "ABAP Developer (S/4HANA RE/FX & IFRS 16)"
 location: "Turkey"
 start: "2018-02"
